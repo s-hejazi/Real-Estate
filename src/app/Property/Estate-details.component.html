@@ -1,0 +1,42 @@
+
+<table class="table" style="width:auto">
+  <tr >
+    <td>
+      <label title="Country" >Country:</label><br />
+      <label title="Estate's Country" >State:</label><br />
+      <label title="City" >City:</label><br />
+      <label title="City's District" >District:</label><br />
+
+    </td>
+    <td>
+      <label title="Estate's Street" >Street: {{propertyDetail.street}}</label><br />
+      <label title="Estate's Number">Number: {{propertyDetail.number}}</label><br />
+      <label title="Postal Code">PostalCode: {{propertyDetail.postalcode}}</label><br />
+    </td>
+    <td>
+      <label title="Bace Price">Base Price: {{propertyDetail.basePrice}}</label><br />
+
+      <label title="Estate's Type" class="title">Selling Type: {{propertyDetail.sellingOfferType.type}}</label><br />
+
+    </td>
+  </tr>
+  <tr style="width:200px;">
+    <td style="padding-right: 75px;">
+      <label title="Estate's Type" class="title">Estate Type: {{propertyDetail.estateType.type}}</label><br />
+    </td>
+
+    <td>
+      <label title="Renovation Date" class="title">Renovation Date: {{propertyDetail.renewDate}}</label><br />
+
+    </td>
+  </tr>
+  <tr>
+    <td style="padding-right: 75px;">
+      <label class="required">Age: {{propertyDetail.age}}</label>
+
+    </td>
+  </tr>
+  <tr style="width:200px;"></tr>
+
+</table>
+

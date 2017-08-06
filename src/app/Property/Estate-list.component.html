@@ -1,0 +1,52 @@
+
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+
+
+<table class="table table-hover" style="width: auto">
+  <tr>
+    <th>Image</th>
+    <th>Selling Type</th>
+    <th>Estate Type</th>
+    <th>Price</th>
+    <th>Extra features</th>
+    <th>Unit available</th>
+    <th>Piece Number</th>
+    <th>More Images</th>
+    <th>Status</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <ng-container *ngFor="let property of properties">
+
+    <tr>
+    <td><img *ngIf="property.imageData" src="{{property.imageData}}" class=" img-circle img-thumbnail" alt="image thumbnail" width="85" height="50"></td>
+    <td>{{property.sellingOfferType.type}}</td>
+    <td>{{property.estateType.type}}</td>
+    <td>{{property.price | currency: 'CAD':true}}</td>
+    <td><span *ngIf="property.hasFeature">Yes</span>
+      <span *ngIf="!property.hasFeature">No</span></td>
+    <td><span *ngIf="property.hasUnit">Yes</span>
+      <span *ngIf="!property.hasUnit">No</span></td>
+    <td >{{property.pieceNumbers}}</td>
+    <td><span *ngIf="property.hasImage">Yes</span>
+      <span *ngIf="!property.hasImage">No</span></td>
+    <td><span *ngIf="property.isSold">Sold</span>
+      <span *ngIf="!property.isSold">Available</span></td>
+    <td>
+      <button name="showDetails" value="Show Details" (click)="toggleDetail(property.sellingOfferId, $event)" >Show Details</button>
+    </td>
+    <td>
+      <input type="button" name="makeOffer" value="Make offer" (click)="addOffer(property.sellingOfferId)"/>
+    </td>
+    </tr>
+    <tr *ngIf="arrayContains(property.sellingOfferId)">
+      <td colspan="9" ><details *ngIf="details" [propertyDetail] = details></details></td>
+    </tr>
+  </ng-container>
+</table>
+
+  <newOffer [sellingOfferId]="sellingOfferId" *ngIf="addOfferActivated" (offerClosed)="toggleModal()"></newOffer>
+
+
