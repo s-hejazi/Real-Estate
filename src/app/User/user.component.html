@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Login</h1>
+<hr>
+<div class="col-md-4">
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" autocomplete="off"
+    novalidate>
+        <div class="form-group" >
+            <label for="email">User Name:</label>
+            <em *ngIf="(loginForm.controls.email?.invalid
+            && loginForm.controls.email?.touched) ">Required</em>
+            <input (ngModel)="email" name="email" id="email" required type="email" class="form-control" placeholder="User Name..." />
+        </div>
+        <div class="form-group" >
+            <em *ngIf="loginForm.controls.password?.invalid &&
+            loginForm.controls.password?.touched">Required</em>
+            <label for="password">Password:</label>
+            <input (ngModel)="password" name="password" id="password" required type="password" class="form-control"placeholder="Password..." />
+        </div>
+
+
+        <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Login</button>
+
+       </span>
+        <button type="button" (click)="cancel" class="btn btn-default">Cancel</button>
+    </form>
+</div>
+<div *ngIf="loginInvalid" class="alert alert-danger">Invalid login</div>
+</body>
+</html>

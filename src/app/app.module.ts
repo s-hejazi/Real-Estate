@@ -16,6 +16,7 @@ import {CreateEstateComponent} from './Property/Create-estate.component'
 import {UnitComponent} from './Property/Unit.component'
 import {TypeItem} from './TypeItems/Type.component'
 import {TypeService} from './TypeItems/Type.service'
+import {AuthService} from './User/auth.service'
 
 @NgModule({
 
@@ -41,7 +42,8 @@ import {TypeService} from './TypeItems/Type.service'
     // {provide: JQ_TOKEN, useValue:jQuery},
     OfferService,
     EstateService,
-    TypeService
+    TypeService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

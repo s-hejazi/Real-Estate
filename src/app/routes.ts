@@ -11,5 +11,6 @@ export const appRoutes:Routes = [
   {path: 'offers', component: OfferComponent},
   {path: 'sellinglist', component:EstateListComponent},
   {path: 'addEstate', component:CreateEstateComponent},
-  {path: 'setting', component:TypeItem}
+  {path: 'setting', component:TypeItem},
+  {path: 'user', loadChildren: 'app/user/user.module#UserModule'}
 ]
