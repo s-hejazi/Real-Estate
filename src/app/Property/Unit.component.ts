@@ -4,7 +4,7 @@
 import {Component} from "@angular/core";
 @Component({
   selector: 'newUnit',
-  templateUrl: 'app/Property/Unit.component.html'
+  templateUrl: './Unit.component.html'
 })
 export class UnitComponent{
 

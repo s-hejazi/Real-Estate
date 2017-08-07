@@ -14,13 +14,8 @@ export class AuthService{
         let headers = new Headers(({'Content-Type': 'application/json'}));
         let options = new RequestOptions({headers: headers})
         let loginInfo = { email: email, password: password};
-        return this.http.post("http://localhost:8181/REAgency/webapi/server/update/sender", loginInfo, options).do(
-            resp=> {
-                if(resp){
-                    console.log(resp)
-                }
-            }
-        ).catch(error=> { return Observable.of(false)})
+        return this.http.post("http://localhost:8181/REAgency/webapi/server/update/sender", loginInfo, options)
+          .catch(error=> { return Observable.of(false)})
     }
 
     isAuthenticated(){

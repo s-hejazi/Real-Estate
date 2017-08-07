@@ -4,7 +4,7 @@
 import {Component} from "@angular/core";
 @Component({
   selector: 'type',
-  templateUrl: 'app/TypeItems/Type.component.html'
+  templateUrl: './Type.component.html'
 })
 export class TypeItem{
 

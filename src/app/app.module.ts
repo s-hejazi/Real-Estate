@@ -4,6 +4,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {RouterModule} from '@angular/router';
 import {appRoutes} from './routes';
+import {navbarComponent} from './navbar/navbar.component'
 import { AppComponent } from './app.component';
 import {OfferComponent} from './Offer/Offer.component'
 import {OfferService} from './Offer/OfferService.service'
@@ -18,6 +19,7 @@ import {TypeItem} from './TypeItems/Type.component'
 import {TypeService} from './TypeItems/Type.service'
 import {AuthService} from './User/auth.service'
 
+
 @NgModule({
 
   imports: [
@@ -30,6 +32,7 @@ import {AuthService} from './User/auth.service'
   ],
   declarations: [
     AppComponent,
+    navbarComponent,
     OfferComponent,
     EstateListComponent,
     EstateDetails,
@@ -42,8 +45,7 @@ import {AuthService} from './User/auth.service'
     // {provide: JQ_TOKEN, useValue:jQuery},
     OfferService,
     EstateService,
-    TypeService,
-    AuthService
+    TypeService
   ],
   bootstrap: [AppComponent]
 })

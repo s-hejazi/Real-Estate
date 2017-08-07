@@ -5,7 +5,7 @@ import {Component} from "@angular/core";
 import {OfferService} from "./OfferService.service";
 import {IOffer} from "./Offer.model";
 @Component({
-  templateUrl: 'app/Offer/Offer.component.html',
+  templateUrl: './Offer.component.html',
   styles:[`
 
   `
