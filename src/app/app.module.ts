@@ -5,14 +5,17 @@ import { HttpModule } from '@angular/http';
 import {RouterModule} from '@angular/router';
 import {appRoutes} from './routes';
 import { AppComponent } from './app.component';
-import {OfferComponent} from './Property/Offer.component'
-import {OfferService} from './Property/OfferService.service'
+import {OfferComponent} from './Offer/Offer.component'
+import {OfferService} from './Offer/OfferService.service'
 import {EstateListComponent}  from './Property/Estate-list.component'
 import {EstateService}  from './Property/Estate.service'
 import {EstateDetails} from './Property/Estate-details.component'
-import {NewOfferModal} from './Property/New-offer-modal.component'
+import {NewOfferModal} from './Offer/New-offer-modal.component'
 import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
 import {CreateEstateComponent} from './Property/Create-estate.component'
+import {UnitComponent} from './Property/Unit.component'
+import {TypeItem} from './TypeItems/Type.component'
+import {TypeService} from './TypeItems/Type.service'
 
 @NgModule({
 
@@ -30,12 +33,15 @@ import {CreateEstateComponent} from './Property/Create-estate.component'
     EstateListComponent,
     EstateDetails,
     NewOfferModal,
-    CreateEstateComponent
+    CreateEstateComponent,
+    UnitComponent,
+    TypeItem
   ],
   providers: [
     // {provide: JQ_TOKEN, useValue:jQuery},
     OfferService,
-    EstateService
+    EstateService,
+    TypeService
   ],
   bootstrap: [AppComponent]
 })
