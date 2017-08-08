@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
 /*@import "~ng2-bs3-modal/bundles/ng2-bs3-modal.js";*/
-
+form{
+  margin: auto;
+}

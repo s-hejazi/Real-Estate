@@ -2,9 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Setting</title>
 </head>
 <body>
-
+<label for="selection">Please select desired option</label>
+<select id="selection" name="typeSelected" [(ngModel)]="typeSelected" (change)="retrieveTypeItems()">
+  <option value="ImageType" selected>Image</option>
+  <option value="EstateType">Estate</option>
+  <option value="ApplianceType">Appliance</option>
+  <option value="EstateFeatureType">Estate Feature</option>
+  <option value="FacilityType">Facility</option>
+  <option value="PieceType">Piece</option>
+  <option value="SellingOfferType">Selling Offer</option>
+</select>
+<div style="float: right">
+  <button *ngIf="radioSelected" (onclick)="editItem(item.id)"
+          class="btn btn-primary glyphicon-pencil" data-toggle="tooltip" data-placement="bottom" title="Edit Selected Item"></button>
+  <button *ngIf="radioSelected" (onclick)="removeItem(item.id)"
+          class="btn btn-primary glyphicon glyphicon-remove" data-toggle="tooltip" data-placement="bottom" title="Remove Selected Item"></button>
+  <button (onclick)="newItem()"
+          class="btn btn-primary glyphicon glyphicon-plus" data-toggle="tooltip" data-placement="bottom" title="Add New Item"></button>
+</div>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th></th>
+    <th>Id</th>
+    <th>Name</th>
+  </tr>
+  </thead>
+  <tr *ngFor="let item of typeItems" (click)= "radioSelected = item.id">
+    <td><input type="radio" id="{{item.id}}" [(ngModel)]="radioSelected" value="{{item.id}}"
+               style="width: auto" ></td>
+    <td>{{item.id}}</td>
+    <td>{{item.type}}</td>
+  </tr>
+</table>
 </body>
 </html>

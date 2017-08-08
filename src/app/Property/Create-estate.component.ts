@@ -31,7 +31,7 @@ export class CreateEstateComponent implements OnInit{
     this.estateService.getSellingOfferTypes().subscribe(
       resp => { this.sellingOfferTypes = resp}
     )
-    this.estateService.getEstateTypes().subscribe(
+    this.estateService. getEstateTypes().subscribe(
       resp => { this.estateTypes = resp}
     )
     // this.estate.detail= this.estateDetail
@@ -51,7 +51,7 @@ export class CreateEstateComponent implements OnInit{
       resp=> {this.districts =resp }
     )
   }
-  createEstate(formValue){;
+  createEstate(formValue){
     formValue.country = this.selectedCountry.id;
     formValue.state = this.selectedState.id;
     formValue.city = this.selectedCity.id;
