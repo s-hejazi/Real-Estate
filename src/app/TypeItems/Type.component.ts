@@ -12,6 +12,7 @@ export class TypeItem{
   typeSelected: string
   radioSelected: string = ''
   typeItems
+  editMode:number = -1
   constructor(private typeService:TypeService){}
   retrieveTypeItems(){
 
@@ -25,6 +26,13 @@ export class TypeItem{
   }
   editItem(id){
 
+    this.editMode = id
+
+  }
+  updateItem(id: number, name : string){
+    this.editMode = -1
+    var updatedtype = { id: id, type: name };
+    this.typeService.updateType(updatedtype).subscribe()
   }
   removeItem(id){
 

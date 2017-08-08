@@ -16,10 +16,7 @@
   <option value="SellingOfferType">Selling Offer</option>
 </select>
 <div style="float: right">
-  <button *ngIf="radioSelected" (onclick)="editItem(item.id)"
-          class="btn btn-primary glyphicon-pencil" data-toggle="tooltip" data-placement="bottom" title="Edit Selected Item"></button>
-  <button *ngIf="radioSelected" (onclick)="removeItem(item.id)"
-          class="btn btn-primary glyphicon glyphicon-remove" data-toggle="tooltip" data-placement="bottom" title="Remove Selected Item"></button>
+
   <button (onclick)="newItem()"
           class="btn btn-primary glyphicon glyphicon-plus" data-toggle="tooltip" data-placement="bottom" title="Add New Item"></button>
 </div>
@@ -29,13 +26,27 @@
     <th></th>
     <th>Id</th>
     <th>Name</th>
+    <th></th>
+    <th></th>
   </tr>
   </thead>
   <tr *ngFor="let item of typeItems" (click)= "radioSelected = item.id">
     <td><input type="radio" id="{{item.id}}" [(ngModel)]="radioSelected" value="{{item.id}}"
                style="width: auto" ></td>
     <td>{{item.id}}</td>
-    <td>{{item.type}}</td>
+    <td *ngIf="editMode === item.id">
+      <input value="{{item.type}}" [(ngModel)]="item.type"/>
+      <button class="btn btn-primary glyphicon glyphicon-ok" (click)="updateItem(item.id, item.type)"></button>
+    </td>
+    <td *ngIf="editMode !== item.id">{{item.type}}</td>
+    <td>
+    <button  (click)="editItem(item.id)"
+             class="btn btn-primary glyphicon-pencil" data-toggle="tooltip" data-placement="bottom" title="Edit Selected Item"></button>
+  </td>
+  <td>
+    <button  (click)="removeItem(item.id)"
+             class="btn btn-primary glyphicon glyphicon-trash" data-toggle="tooltip" data-placement="bottom" title="Remove Selected Item"></button>
+  </td>
   </tr>
 </table>
 </body>
