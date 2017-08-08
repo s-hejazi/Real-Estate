@@ -7,21 +7,21 @@ import {IOffer} from "./Offer.model";
 @Component({
   templateUrl: './Offer.component.html',
   styles:[`
-			body{
+		body{
 		margin: 0;
 		padding: 0;
-		background-color: rgb(0,200,200);
-		font-size: 17px;
+		font-size: 14px;
 	}
 	form{
 	
 		width:80%;
 		text-align: center;
 		margin: 0 auto;
-		margin-top: 10%;
+		margin-top: 30px;
 		
 		}
 		div:first-child{
+			background-color: lightgrey;
 		height: 80px;
 		width: 100%;
 			position: relative;
@@ -44,7 +44,7 @@ import {IOffer} from "./Offer.model";
 		div:first-child button{
 			position: absolute;
 			top: 10px;
-			left: 450px;
+			left: 500px;
 		}
 		
 	button{
@@ -52,8 +52,9 @@ import {IOffer} from "./Offer.model";
 		color:white;
 		width: 120px;
 		height: 40px;
-		
-		}
+		border : 1px solid white;
+		border-radius: 5px;
+		}	
   `
   ]
 })
