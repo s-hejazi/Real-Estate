@@ -7,7 +7,7 @@ import {EstateListComponent} from './Property/Estate-list.component'
 import {CreateEstateComponent} from './Property/Create-estate.component'
 import {TypeItem} from './TypeItems/Type.component'
 export const appRoutes:Routes = [
-  {path: '', redirectTo: '/offers', pathMatch:'full'},
+  {path: '', redirectTo: '/sellinglist', pathMatch:'full'},
   {path: 'offers', component: OfferComponent},
   {path: 'sellinglist', component:EstateListComponent},
   {path: 'addEstate', component:CreateEstateComponent},

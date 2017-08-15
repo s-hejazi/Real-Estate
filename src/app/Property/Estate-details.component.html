@@ -14,7 +14,7 @@
       <label title="Postal Code">PostalCode: {{propertyDetail.postalcode}}</label><br />
     </td>
     <td>
-      <label title="Bace Price">Base Price: {{propertyDetail.basePrice}}</label><br />
+      <label title="Bace Price">Base Price: {{propertyDetail.basePrice | currency:'CAD':true}}</label><br />
 
       <label title="Estate's Type" class="title">Selling Type: {{propertyDetail.sellingOfferType.type}}</label><br />
 
